@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set the data values
     currentDateElement.textContent = getCurrentDate();
     updateTime(currentTimeElement);
+
+    // Update current time every second
+    setInterval(function () {
+        updateTime(currentTimeElement);
+    }, 1000);
 });
 
 function getCurrentDate() {
