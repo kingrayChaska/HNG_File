@@ -6,21 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set the data values
     currentDateElement.textContent = getCurrentDate();
     updateTime(currentTimeElement);
-
-    // Update current time every second
-    setInterval(function () {
-        updateTime(currentTimeElement);
-    }, 1000);
 });
 
 function getCurrentDate() {
     const currentDate = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { weekday: 'long'};
     return currentDate.toLocaleDateString(undefined, options);
 }
 
 function updateTime(element) {
     const currentTime = new Date();
-    const timeString = currentTime.toLocaleTimeString();
+    const timeString = currentTime.toISOString();
     element.textContent = timeString;
 }
