@@ -20,7 +20,6 @@ function getCurrentDate() {
 }
 
 function updateTime(element) {
-    const currentTime = new Date();
-    const timeString = currentTime.toISOString();
-    element.textContent = timeString;
+    const currentTime = Date.now();
+    element.textContent = currentTime;
 }
